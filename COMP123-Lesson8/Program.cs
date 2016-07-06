@@ -19,11 +19,17 @@ namespace COMP123_Lesson8
                 firstNum = int.Parse(Console.ReadLine());
                 Console.Write("Enter your denominator: ");
                 secondNum = int.Parse(Console.ReadLine());
-                Console.WriteLine("Result: " + Divide(firstNum, secondNum));
+                Console.WriteLine("Result: {0:f2}", Divide(firstNum, secondNum));
             }
-            catch 
+            catch (FormatException)
             {
-                Console.WriteLine("Error: Invalid Input");
+                Console.WriteLine("Error: Please enter an integer");
+            }
+            catch (OverflowException)
+            {
+                // Number too large or small to fit in int32
+                Console.WriteLine("Error: Number too large.");
+                Console.WriteLine("Please enter an integer smaller than 2,147,483,647 ");
             }
 
         }
