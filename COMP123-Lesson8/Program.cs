@@ -10,6 +10,13 @@ namespace COMP123_Lesson8
     {
         static void Main(string[] args)
         {
+            int numerator = 5;
+            int denominator = 0;
+
+            int result = numerator / denominator;
+
+            Console.WriteLine("Result: " + result);
+
         }
     }
 }
