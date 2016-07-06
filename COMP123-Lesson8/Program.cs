@@ -10,13 +10,36 @@ namespace COMP123_Lesson8
     {
         static void Main(string[] args)
         {
-            int numerator = 5;
-            int denominator = 0;
+            int firstNum;
+            int secondNum;
 
-            int result = numerator / denominator;
+            try
+            {
+                Console.Write("Enter your numerator: ");
+                firstNum = int.Parse(Console.ReadLine());
+                Console.Write("Enter your denominator: ");
+                secondNum = int.Parse(Console.ReadLine());
+                Console.WriteLine("Result: " + Divide(firstNum, secondNum));
+            }
+            catch 
+            {
+                Console.WriteLine("Error: Invalid Input");
+            }
 
-            Console.WriteLine("Result: " + result);
+        }
 
+        private static float Divide(int numerator, int denominator)
+        {
+            try
+            {
+                float result = Convert.ToSingle(numerator) / Convert.ToSingle(denominator);
+                return result;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("Error: " + exception.Message);
+                return 0f;
+            }
         }
     }
 }
